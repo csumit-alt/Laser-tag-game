@@ -9,7 +9,8 @@
 #define LED_PIN          6
 #define BUZZER_PIN       6
 #define RELOAD_BUTTON    8
-#define RF_DATA_PIN      12 // RF data pin (connect to TX on 433MHz)
+#define RF_DATA_PIN      12  
+// RF data pin (connect to TX on 433MHz)
 
 // GPS
 SoftwareSerial gpsSerial(4, 3);  // RX, TX
