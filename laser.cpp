@@ -12,7 +12,7 @@
 // RF data pin (connect to TX on 433MHz)
 
 // GPS
-SoftwareSerial gpsSerial(4, 3);  // RX, TX
+SoftwareSerial gpsSerial(4, 9);  // RX, TX
 TinyGPSPlus gps;
 
 // RF Transmitter
