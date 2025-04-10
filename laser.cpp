@@ -1,13 +1,12 @@
 #include <SoftwareSerial.h>
 #include <TinyGPS++.h>
 #include <RH_ASK.h>
-#include <SPI.h> // Required even if not used directly
+#include <SPI.h> 
 
 // ---------------- Pin Definitions ----------------
 #define LASER_PIN        5
 #define HIT_SENSOR_PIN   2
 #define LED_PIN          6
-#define BUZZER_PIN       6
 #define RELOAD_BUTTON    8
 #define RF_DATA_PIN      12  
 // RF data pin (connect to TX on 433MHz)
@@ -31,7 +30,6 @@ void setup() {
   pinMode(LASER_PIN, OUTPUT);
   pinMode(HIT_SENSOR_PIN, INPUT);
   pinMode(LED_PIN, OUTPUT);
-  pinMode(BUZZER_PIN, OUTPUT);
   pinMode(RELOAD_BUTTON, INPUT_PULLUP);
 
   if (!rfDriver.init()) {
@@ -49,10 +47,8 @@ void loop() {
 
   if (isHit && millis() - hitTime < 3000) {
     digitalWrite(LED_PIN, HIGH);
-    digitalWrite(BUZZER_PIN, HIGH);
   } else {
     digitalWrite(LED_PIN, LOW);
-    digitalWrite(BUZZER_PIN, LOW);
     isHit = false;
   }
 }
